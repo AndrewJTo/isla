@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "@vitest/coverage-v8": "^2.0.4",
+    "gts": "^5.3.1",
+    "tsx": "^4.16.2",
+    "typescript": "^5.4.3",
+    "vitest": "^2.0.4"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "test": "vitest",
+    "compile": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node build/index.js",
+    "fix": "gts fix",
+    "prepare": "yarn run compile",
+    "pretest": "yarn run compile",
+    "posttest": "yarn run lint"
+  }
+}
