@@ -1,5 +1,5 @@
 import {expect, describe, it} from 'vitest';
-import {parseMessage} from '.';
+import {parseMessage} from './messageParser';
 
 describe('parse message', () => {
   const tests = [
