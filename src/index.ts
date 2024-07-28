@@ -10,7 +10,7 @@ interface Message {
   primaryCondition: String;
 }
 
-const nameRe = /PRS(?:\|[^\\|]*){3}\|([\w^]+)/;
+const nameRe = /PRS(?:\|[^\\|]*){3}\|([a-zA-Z\s^]+)/;
 const dateOfBirthRe = /PRS(?:\|[^\\|]*){7}\|(\d+)/;
 const conditionRe = /DET(?:\|[^\\|]*){3}\|([^\n\\|]+)/;
 

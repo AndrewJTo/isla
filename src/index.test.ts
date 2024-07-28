@@ -101,12 +101,20 @@ DET|1|I|^^MainDepartment^101^Room 1|Common Cold`,
       },
     },
     {
-      name: 'cannot parse name',
+      name: 'missing name',
       input: `MSG|^~\\&|SenderSystem|Location|ReceiverSystem|Location|20230502112233||DATA^TYPE|123456|P|2.5
 EVT|TYPE|20230502112233
 PRS|1|9876543210^^^Location^ID|||||M|19800101|
 DET|1|I|^^MainDepartment^101^Room 1|Common Cold`,
       throws: 'Could not parse full name',
+    },
+    {
+      name: 'invalid characters in name',
+      input: `MSG|^~\\&|SenderSystem|Location|ReceiverSystem|Location|20230502112233||DATA^TYPE|123456|P|2.5
+EVT|TYPE|20230502112233
+PRS|1|9876543210^^^Location^ID||J2hn^Smi@th|||M|19800101|
+DET|1|I|^^MainDepartment^101^Room 1|Common Cold`,
+      throws: 'At least a first name and surname must be provided',
     },
     {
       name: 'only first name',
